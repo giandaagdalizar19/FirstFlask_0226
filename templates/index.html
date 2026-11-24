@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask POST</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <main class="kotak">
+        <h1>Selamat Datang</h1>
+
+        <form method="POST" action="/kirim">
+            <label for="nama">Nama kamu</label>
+            <input type="text" id="nama" name="nama" placeholder="Tulis nama di sini" required>
+            <button type="submit">Kirim</button>
+        </form>
+
+        {% if pesan %}
+            <p class="hasil">{{ pesan }}</p>
+        {% endif %}
+    </main>
+</body>
+</html>
